@@ -1,4 +1,5 @@
 import 'package:cook_book/app/onboarding/controllers/onboard_controller.dart';
+import 'package:cook_book/utils/constant/size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,19 +23,19 @@ class OnBoardScreen extends StatelessWidget {
             onPageChanged: controller.updatePageIndicator,
             children: const [
               OnBoardPage(
-                image: 'a',
-                subTitle: 'a',
-                title: 'a',
+                image: "assets/onboard_image/Charity-bro.svg",
+                title: 'Choose Your Items',
+                subTitle: 'welcome to the this app. for your favorite.',
               ),
               OnBoardPage(
-                image: 'a',
-                subTitle: 'a',
-                title: 'a',
+                image: "assets/onboard_image/Chef-bro.svg",
+                title: 'Make a Good Product',
+                subTitle: 'you can try your own receipt',
               ),
               OnBoardPage(
-                image: 'a',
-                subTitle: 'a',
-                title: 'a',
+                image: "assets/onboard_image/Pizza maker-bro.svg",
+                title: 'Enjoy Your Life',
+                subTitle: 'free your ideas to execute',
               ),
             ],
           ),

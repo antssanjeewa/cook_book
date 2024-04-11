@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cook_book/app/login/screens/login.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OnBoardController extends GetxController {
@@ -15,8 +16,12 @@ class OnBoardController extends GetxController {
   }
 
   void nextPage() {
-    int page = currentPageIndex.value + 1;
-    pageController.jumpToPage(page);
+    int page = currentPageIndex.value;
+    if (page == 2) {
+      Get.offAll(() => const LoginScreen());
+    } else {
+      pageController.jumpToPage(page + 1);
+    }
   }
 
   void skipPage() {

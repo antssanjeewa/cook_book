@@ -1,5 +1,6 @@
 import 'package:cook_book/utils/constant/size.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OnBoardPage extends StatelessWidget {
   const OnBoardPage({
@@ -17,9 +18,7 @@ class OnBoardPage extends StatelessWidget {
       padding: const EdgeInsets.all(MySizes.defaultSpace),
       child: Column(
         children: [
-          Image(
-            image: AssetImage(image),
-          ),
+          SvgPicture.asset(image),
           Text(
             title,
             style: Theme.of(context).textTheme.headlineMedium,
@@ -27,7 +26,7 @@ class OnBoardPage extends StatelessWidget {
           const SizedBox(height: MySizes.spaceBtwItems),
           Text(
             subTitle,
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
         ],
       ),

@@ -9,10 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      home: const OnBoardScreen(),
+      home: const SafeArea(child: OnBoardScreen()),
     );
   }
 }
