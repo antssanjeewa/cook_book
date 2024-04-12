@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 class SearchBar extends StatelessWidget {
   const SearchBar({
     Key? key,
+    this.borderColor = TColors.black,
   }) : super(key: key);
+
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class SearchBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-          border: Border.all(color: TColors.black),
+          border: Border.all(color: borderColor),
         ),
         child: Row(
           children: [
