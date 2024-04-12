@@ -1,6 +1,8 @@
-import 'package:cook_book/app/home/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'home/screens/home.dart';
+import 'store/screens/store.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -34,7 +36,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    Container(color: Colors.red),
+    const StoreScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.orange),
   ];
