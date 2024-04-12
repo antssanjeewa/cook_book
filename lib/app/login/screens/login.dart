@@ -17,6 +17,7 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 50),
+              Image(image: AssetImage("assets/logos/t-store-splash-logo-white.png")),
               Text(
                 "Welcome Back",
                 style: Theme.of(context).textTheme.headlineMedium,
