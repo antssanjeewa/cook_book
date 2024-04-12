@@ -52,16 +52,25 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: MySizes.defaultSpace),
 
               ///
-              ElevatedButton(
-                onPressed: () {},
-                child: Text("Sign In"),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Sign In"),
+                ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text("Create Account"),
+              SizedBox(height: MySizes.defaultSpace),
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  child: Text("Create Account"),
+                ),
               ),
+              SizedBox(height: MySizes.defaultSpace),
 
               ///
               Row(
@@ -76,11 +85,30 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
 
+              SizedBox(height: MySizes.defaultSpace),
+
               ///
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    decoration: BoxDecoration(border: Border.all(color: Colors.grey), borderRadius: BorderRadius.circular(100)),
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: Icon(Icons.ac_unit_sharp),
+                  ),
+                  SizedBox(width: MySizes.defaultSpace),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: Icon(Icons.gps_off_outlined),
                   ),
                 ],
               ),

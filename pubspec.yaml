@@ -40,6 +40,18 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   flutter_native_splash: ^2.2.18
   flutter_svg: ^1.1.6
+  intl: ^0.18.1
+  url_launcher: ^6.1.11
+  get_storage: ^2.1.1
+  readmore: ^2.2.0
+  carousel_slider: ^4.2.1
+  logger: ^2.2.0
+  flutter_rating_bar: ^4.0.1
+  capped_progress_indicator: ^0.0.2
+  http: ^0.13.5
+  connectivity_plus: ^5.0.2
+  firebase_storage: ^11.6.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +79,15 @@ flutter:
   assets:
     - assets/onboard_image/
     - assets/logos/
+    - assets/icons/brands/
+    - assets/images/content/
+    - assets/images/banners/
+    - assets/images/reviews/
+    - assets/images/products/
+    - assets/icons/categories/
+    - assets/images/animations/
+    - assets/icons/payment_methods/
+    - assets/images/on_boarding_images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -80,7 +101,25 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 800
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
