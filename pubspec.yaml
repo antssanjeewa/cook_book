@@ -41,7 +41,7 @@ dependencies:
   flutter_native_splash: ^2.2.18
   flutter_svg: ^1.1.6
   intl: ^0.18.1
-  url_launcher: ^6.1.11
+  # url_launcher: ^6.1.11
   get_storage: ^2.1.1
   readmore: ^2.2.0
   carousel_slider: ^4.2.1
@@ -49,8 +49,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   capped_progress_indicator: ^0.0.2
   http: ^0.13.5
-  connectivity_plus: ^5.0.2
-  firebase_storage: ^11.6.0
+  # connectivity_plus: ^5.0.2
+  # firebase_storage: ^11.6.0
   
 
 dev_dependencies:

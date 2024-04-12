@@ -1,5 +1,10 @@
+import 'package:cook_book/app/navigation_menu.dart';
 import 'package:cook_book/utils/constant/size.dart';
+import 'package:cook_book/utils/constants/image_strings.dart';
+import 'package:cook_book/utils/constants/sizes.dart';
+import 'package:cook_book/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -17,13 +22,16 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 50),
-              Image(image: AssetImage("assets/logos/t-store-splash-logo-white.png")),
+              const Image(
+                height: 100,
+                image: AssetImage(TImages.lightAppLogo),
+              ),
               Text(
-                "Welcome Back",
+                TTexts.loginTitle,
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               Text(
-                "Discover Limitless Choise and Others",
+                TTexts.loginSubTitle,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 50),
@@ -35,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                     TextFormField(
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.mail_outlined),
-                        labelText: "Email",
+                        labelText: TTexts.email,
                       ),
                     ),
 
@@ -46,70 +54,80 @@ class LoginScreen extends StatelessWidget {
                     TextFormField(
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.password_rounded),
-                        labelText: "Password",
+                        labelText: TTexts.password,
                         suffixIcon: Icon(Icons.remove_red_eye),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: MySizes.defaultSpace),
 
               ///
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Sign In"),
+                  onPressed: () => Get.off(() => NavigationMenu()),
+                  child: const Text(TTexts.signIn),
                 ),
               ),
-              SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: MySizes.defaultSpace),
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
                   onPressed: () {},
-                  child: Text("Create Account"),
+                  child: const Text(TTexts.createAccount),
                 ),
               ),
-              SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: MySizes.defaultSpace),
 
               ///
               Row(
                 children: [
-                  Flexible(
+                  const Flexible(
                     child: Divider(thickness: 0.5, indent: 60, endIndent: 5),
                   ),
-                  Text("Or Sign in with", style: Theme.of(context).textTheme.labelMedium),
-                  Flexible(
+                  Text(TTexts.orSignInWith, style: Theme.of(context).textTheme.labelMedium),
+                  const Flexible(
                     child: Divider(thickness: 0.5, indent: 5, endIndent: 60),
                   ),
                 ],
               ),
 
-              SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: MySizes.defaultSpace),
 
               ///
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 50,
-                    height: 50,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: Icon(Icons.ac_unit_sharp),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Image(
+                        width: TSizes.iconMd,
+                        height: TSizes.iconMd,
+                        image: AssetImage(TImages.google),
+                      ),
+                    ),
                   ),
-                  SizedBox(width: MySizes.defaultSpace),
+                  const SizedBox(width: MySizes.defaultSpace),
                   Container(
-                    width: 50,
-                    height: 50,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: Icon(Icons.gps_off_outlined),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Image(
+                        width: TSizes.iconMd,
+                        height: TSizes.iconMd,
+                        image: AssetImage(TImages.facebook),
+                      ),
+                    ),
                   ),
                 ],
               ),

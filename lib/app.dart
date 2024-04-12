@@ -1,7 +1,8 @@
 import 'package:cook_book/app/onboarding/screens/onboard_screen.dart';
-import 'package:cook_book/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import 'utils/theme/theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,8 +12,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: MyThemeData.lightTheme,
-      darkTheme: MyThemeData.darkTheme,
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
       home: const SafeArea(child: OnBoardScreen()),
     );
   }
