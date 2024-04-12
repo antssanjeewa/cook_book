@@ -1,4 +1,5 @@
 import 'package:cook_book/app/navigation_menu.dart';
+import 'package:cook_book/app/onboarding/screens/onboard_screen.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:cook_book/utils/constants/text_strings.dart';
@@ -66,7 +67,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.off(() => NavigationMenu()),
+                  onPressed: () => Get.off(() => const NavigationMenu()),
                   child: const Text(TTexts.signIn),
                 ),
               ),
@@ -74,7 +75,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.off(() => const OnBoardScreen()),
                   child: const Text(TTexts.createAccount),
                 ),
               ),

@@ -14,7 +14,6 @@ class CurvedBackground extends StatelessWidget {
     return ClipPath(
       clipper: CustomCurvedEdged(),
       child: Container(
-        height: 400,
         color: TColors.primary,
         child: Stack(
           children: [

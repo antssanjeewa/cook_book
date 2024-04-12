@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                   const SectionHeaderBar(title: "Popular Categories"),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   SizedBox(
-                    height: 80,
+                    height: 100,
                     child: CategoryList(),
                   )
                 ],

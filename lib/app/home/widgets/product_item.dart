@@ -91,13 +91,13 @@ class ProductItem extends StatelessWidget {
                       width: TSizes.iconLg * 2,
                       height: TSizes.iconLg * 2,
                       decoration: const BoxDecoration(
-                        color: TColors.light,
+                        color: TColors.dark,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(TSizes.md),
                           bottomRight: Radius.circular(TSizes.md),
                         ),
                       ),
-                      child: const Icon(Icons.add, color: TColors.dark),
+                      child: const Icon(Icons.add, color: TColors.light),
                     )
                   ],
                 ),

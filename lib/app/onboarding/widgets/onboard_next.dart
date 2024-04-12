@@ -19,6 +19,7 @@ class OnBoardNext extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: Colors.black,
+          side: BorderSide.none,
         ),
         child: const Padding(
           padding: EdgeInsets.all(TSizes.buttonHeight),
