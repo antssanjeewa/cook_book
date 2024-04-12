@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cook_book/utils/constants/colors.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
@@ -86,6 +87,133 @@ class HomeScreen extends StatelessWidget {
             ),
 
             /// Body
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: CarouselSlider(
+                options: CarouselOptions(viewportFraction: 1),
+                items: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(TSizes.md),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(TSizes.md),
+                      child: const Image(
+                        image: AssetImage(TImages.banner1),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            /// Item List
+            GridView.builder(
+              itemCount: 6,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.all(TSizes.lg),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: TSizes.gridViewSpacing,
+                crossAxisSpacing: TSizes.gridViewSpacing,
+                mainAxisExtent: 330,
+              ),
+              itemBuilder: (_, index) => Container(
+                // width: 180,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade900,
+                  borderRadius: BorderRadius.circular(TSizes.md),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(TSizes.md),
+                        color: Colors.grey.shade800.withOpacity(.3),
+                      ),
+                      padding: const EdgeInsets.all(TSizes.sm),
+                      child: Stack(
+                        children: [
+                          /// Image
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(TSizes.md),
+                            child: const Image(
+                              image: AssetImage(TImages.productImage1),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+
+                          /// Sale Tag
+                          Positioned(
+                            top: 12,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: TColors.secondary.withOpacity(0.8),
+                                borderRadius: BorderRadius.circular(TSizes.sm),
+                              ),
+                              padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
+                              child: Text(
+                                "20%",
+                                style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black),
+                              ),
+                            ),
+                          ),
+
+                          /// Favorite
+                          Positioned(
+                            top: 0,
+                            right: 0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: TColors.dark.withOpacity(0.8),
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              child: IconButton(icon: const Icon(Icons.favorite), onPressed: () {}),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    /// Item Details
+                    const SizedBox(height: TSizes.spaceBtwItems / 2),
+                    Padding(
+                      padding: const EdgeInsets.only(left: TSizes.sm),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Green Nike Air Shoes", style: Theme.of(context).textTheme.titleSmall),
+                          const SizedBox(height: TSizes.spaceBtwItems / 2),
+                          Text("Nike", style: Theme.of(context).textTheme.labelMedium),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Rs 230", style: Theme.of(context).textTheme.headlineMedium),
+                              Container(
+                                width: TSizes.iconLg * 1.2,
+                                height: TSizes.iconLg * 1.2,
+                                decoration: const BoxDecoration(
+                                  color: TColors.light,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(TSizes.md),
+                                    bottomRight: Radius.circular(TSizes.md),
+                                  ),
+                                ),
+                                child: const Icon(Icons.add, color: TColors.dark),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
