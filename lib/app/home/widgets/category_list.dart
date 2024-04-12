@@ -51,12 +51,13 @@ class CategoryItem extends StatelessWidget {
             padding: const EdgeInsets.all(TSizes.sm),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
-              color: Colors.white,
+              color: Theme.of(context).scaffoldBackgroundColor,
             ),
             child: Center(
               child: Image(
                 image: AssetImage(icon),
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
+                color: Theme.of(context).textTheme.bodyLarge?.color,
               ),
             ),
           ),

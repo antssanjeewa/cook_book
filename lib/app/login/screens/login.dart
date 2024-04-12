@@ -1,5 +1,4 @@
 import 'package:cook_book/app/navigation_menu.dart';
-import 'package:cook_book/utils/constant/size.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:cook_book/utils/constants/text_strings.dart';
@@ -15,8 +14,8 @@ class LoginScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            vertical: MySizes.appBarHeight,
-            horizontal: MySizes.defaultSpace,
+            vertical: TSizes.appBarHeight,
+            horizontal: TSizes.defaultSpace,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                     ),
 
                     ///
-                    const SizedBox(height: MySizes.defaultSpace),
+                    const SizedBox(height: TSizes.defaultSpace),
 
                     ///
                     TextFormField(
@@ -61,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: TSizes.defaultSpace),
 
               ///
               SizedBox(
@@ -71,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                   child: const Text(TTexts.signIn),
                 ),
               ),
-              const SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: TSizes.defaultSpace),
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
@@ -79,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                   child: const Text(TTexts.createAccount),
                 ),
               ),
-              const SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: TSizes.defaultSpace),
 
               ///
               Row(
@@ -94,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: MySizes.defaultSpace),
+              const SizedBox(height: TSizes.defaultSpace),
 
               ///
               Row(
@@ -114,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(width: MySizes.defaultSpace),
+                  const SizedBox(width: TSizes.defaultSpace),
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),

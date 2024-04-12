@@ -1,5 +1,5 @@
 import 'package:cook_book/app/onboarding/controllers/onboard_controller.dart';
-import 'package:cook_book/utils/constant/size.dart';
+import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardNext extends StatelessWidget {
@@ -12,8 +12,8 @@ class OnBoardNext extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: MySizes.defaultSpace,
-      right: MySizes.defaultSpace,
+      bottom: TSizes.defaultSpace,
+      right: TSizes.defaultSpace,
       child: ElevatedButton(
         onPressed: controller.nextPage,
         style: ElevatedButton.styleFrom(
@@ -21,7 +21,7 @@ class OnBoardNext extends StatelessWidget {
           backgroundColor: Colors.black,
         ),
         child: const Padding(
-          padding: EdgeInsets.all(MySizes.buttonHeight),
+          padding: EdgeInsets.all(TSizes.buttonHeight),
           child: Icon(Icons.arrow_forward_ios_rounded),
         ),
       ),

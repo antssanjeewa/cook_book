@@ -1,5 +1,4 @@
 import 'package:cook_book/app/onboarding/controllers/onboard_controller.dart';
-import 'package:cook_book/utils/constant/size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -14,7 +14,7 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade900,
+        color: TColors.light.withOpacity(0.1),
         borderRadius: BorderRadius.circular(TSizes.md),
       ),
       child: Column(
@@ -25,7 +25,7 @@ class ProductItem extends StatelessWidget {
             height: 180,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(TSizes.md),
-              color: Colors.grey.shade800.withOpacity(.3),
+              color: TColors.dark.withOpacity(.9),
             ),
             padding: const EdgeInsets.all(TSizes.sm),
             child: Stack(

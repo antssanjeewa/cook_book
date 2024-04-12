@@ -1,5 +1,5 @@
 import 'package:cook_book/app/onboarding/controllers/onboard_controller.dart';
-import 'package:cook_book/utils/constant/size.dart';
+import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardSkip extends StatelessWidget {
@@ -10,8 +10,8 @@ class OnBoardSkip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      right: MySizes.defaultSpace,
-      top: MySizes.defaultSpace,
+      right: TSizes.defaultSpace,
+      top: TSizes.defaultSpace,
       child: TextButton(
         onPressed: OnBoardController.instance.skipPage,
         child: const Text("Skip"),
