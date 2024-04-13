@@ -14,19 +14,16 @@ class SectionHeaderBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title, style: Theme.of(context).textTheme.headlineSmall),
-          if (onPressed != null)
-            TextButton(
-              onPressed: onPressed,
-              child: Text("View all"),
-            )
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(title, style: Theme.of(context).textTheme.headlineSmall),
+        if (onPressed != null)
+          TextButton(
+            onPressed: onPressed,
+            child: Text("View all"),
+          )
+      ],
     );
   }
 }

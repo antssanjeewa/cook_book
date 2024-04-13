@@ -37,7 +37,11 @@ class SettingScreen extends StatelessWidget {
             ),
 
             const SizedBox(height: TSizes.spaceBtwItems),
-            const SectionHeaderBar(title: "Account Settings"),
+
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+              child: SectionHeaderBar(title: "Account Settings"),
+            ),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
@@ -77,7 +81,10 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
-            const SectionHeaderBar(title: "App Settings"),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+              child: SectionHeaderBar(title: "App Settings"),
+            ),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),

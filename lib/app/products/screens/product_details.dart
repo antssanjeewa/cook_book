@@ -1,10 +1,12 @@
 import 'package:cook_book/app/home/widgets/custom_curve.dart';
+import 'package:cook_book/app/reviews/screens/review_list.dart';
 import 'package:cook_book/common/widgets/custom_appbar.dart';
 import 'package:cook_book/common/widgets/section_heading.dart';
 import 'package:cook_book/utils/constants/colors.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -53,12 +55,12 @@ class ProductDetailsScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems),
 
                   //
-                  SizedBox(width: double.infinity, child: Text("Color", style: Theme.of(context).textTheme.headlineMedium)),
+                  const SectionHeaderBar(title: "Color"),
                   const ColorData(),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
                   //
-                  SizedBox(width: double.infinity, child: Text("Size", style: Theme.of(context).textTheme.headlineMedium)),
+                  const SectionHeaderBar(title: "Size"),
                   const SizeData(),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -67,14 +69,14 @@ class ProductDetailsScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   //
-                  SizedBox(width: double.infinity, child: Text("Description", style: Theme.of(context).textTheme.headlineMedium)),
+                  const SectionHeaderBar(title: "Description"),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const ReadMoreText(
                     "description is here. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
                     trimLines: 2,
                     trimMode: TrimMode.Line,
-                    trimExpandedText: "Show More",
-                    trimCollapsedText: "Less",
+                    trimExpandedText: "Less",
+                    trimCollapsedText: "Show More",
                     moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
@@ -84,7 +86,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   //
                   SectionHeaderBar(
                     title: "Reviews (20)",
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const ReviewLstScreen()),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
                 ],

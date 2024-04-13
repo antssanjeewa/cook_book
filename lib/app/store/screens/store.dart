@@ -41,9 +41,12 @@ class StoreScreen extends StatelessWidget {
                     ),
 
                     /// Feature Brands
-                    SectionHeaderBar(
-                      title: "Featured Brands",
-                      onPressed: () {},
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+                      child: SectionHeaderBar(
+                        title: "Featured Brands",
+                        onPressed: () {},
+                      ),
                     ),
 
                     /// Brans List

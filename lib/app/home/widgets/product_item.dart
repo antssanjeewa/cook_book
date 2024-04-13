@@ -1,4 +1,4 @@
-import 'package:cook_book/app/store/screens/product_details.dart';
+import 'package:cook_book/app/products/screens/product_details.dart';
 import 'package:cook_book/utils/constants/colors.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
