@@ -1,4 +1,5 @@
 import 'package:cook_book/app/home/widgets/curved_background.dart';
+import 'package:cook_book/app/profile/screens/address.dart';
 import 'package:cook_book/common/widgets/custom_appbar.dart';
 import 'package:cook_book/common/widgets/section_heading.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
@@ -46,33 +47,34 @@ class SettingScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
               child: Column(
-                children: const [
+                children: [
                   ListTile(
-                    leading: Icon(Icons.home_outlined, size: 40),
-                    title: Text("My Account"),
-                    subtitle: Text("Email, Password, Personal Details"),
+                    leading: const Icon(Icons.home_outlined, size: 40),
+                    title: const Text("My Address"),
+                    subtitle: const Text("Set Delivery Addresses"),
+                    onTap: () => Get.to(() => const AddressScreen()),
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Icon(Icons.shopping_cart, size: 40),
                     title: Text("My Cart"),
                     subtitle: Text("Email, Password, Personal Details"),
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Icon(Icons.shopping_bag, size: 40),
                     title: Text("My Orders"),
                     subtitle: Text("Email, Password, Personal Details"),
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Icon(Icons.notifications, size: 40),
                     title: Text("Notifications"),
                     subtitle: Text("Email, Password, Personal Details"),
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Icon(Icons.security, size: 40),
                     title: Text("Account Privacy"),
                     subtitle: Text("Email, Password, Personal Details"),
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Icon(Icons.people, size: 40),
                     title: Text("About Us"),
                     subtitle: Text("Email, Password, Personal Details"),

@@ -1,3 +1,4 @@
+import 'package:cook_book/common/widgets/rounded_container.dart';
 import 'package:cook_book/utils/constants/colors.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
@@ -48,12 +49,7 @@ class RatingCard extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwItems),
 
         // comment
-        Container(
-          decoration: BoxDecoration(
-            color: TColors.darkerGrey,
-            borderRadius: BorderRadius.circular(TSizes.md),
-          ),
-          padding: EdgeInsets.all(TSizes.md),
+        RoundedContainer(
           child: Column(
             children: [
               Row(
