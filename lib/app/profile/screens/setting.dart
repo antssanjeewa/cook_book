@@ -4,6 +4,9 @@ import 'package:cook_book/common/widgets/section_heading.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'profile.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -22,10 +25,11 @@ class SettingScreen extends StatelessWidget {
                   TAppBar(
                     title: Text("Settings", style: Theme.of(context).textTheme.headlineMedium),
                   ),
-                  const ListTile(
-                    leading: Image(image: AssetImage(TImages.user)),
-                    title: Text("Sameera Sanjeewa"),
-                    subtitle: Text("sameeraefac94@gmail.com"),
+                  ListTile(
+                    leading: const Image(image: AssetImage(TImages.user)),
+                    title: const Text("Sameera Sanjeewa"),
+                    subtitle: const Text("sameeraefac94@gmail.com"),
+                    trailing: IconButton(icon: const Icon(Icons.edit), onPressed: () => Get.to(() => const ProfileScreen())),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
                 ],

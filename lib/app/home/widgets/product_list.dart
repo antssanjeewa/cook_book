@@ -11,8 +11,8 @@ class ProductList extends StatelessWidget {
 
   final List<String> productList = [
     TImages.productImage1,
+    TImages.productImage5,
     TImages.productImage2,
-    TImages.productImage56,
     TImages.productImage37,
     TImages.productImage32,
     TImages.productImage34,
