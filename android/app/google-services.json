@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "379751274507",
+    "project_id": "f-ecommerce-fad03",
+    "storage_bucket": "f-ecommerce-fad03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379751274507:android:9a6fe0f8130539b8a68f0e",
+        "android_client_info": {
+          "package_name": "com.example.cook_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379751274507-0lmtdau1o4j7aji96nuihi2pr0ltgatt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnvfIGT8adloP0K2qvmkzHUJBM1tp0pDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379751274507-0lmtdau1o4j7aji96nuihi2pr0ltgatt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "379751274507-t4ekb683ds5tt0c77asglgqk7on3nmcm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cookBook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
