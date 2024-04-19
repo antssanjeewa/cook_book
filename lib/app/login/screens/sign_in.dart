@@ -1,17 +1,26 @@
-import 'package:cook_book/app/login/screens/sign_in.dart';
-import 'package:cook_book/app/navigation_menu.dart';
+import 'package:cook_book/app/login/controllers/sign_in_controller.dart';
+import 'package:cook_book/app/login/screens/login.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:cook_book/utils/constants/text_strings.dart';
+import 'package:cook_book/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  SignInScreen({super.key});
+
+  final controller = Get.put(SignInController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          TTexts.signupTitle,
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -21,30 +30,39 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 50),
-              const Image(
-                height: 100,
-                image: AssetImage(TImages.lightAppLogo),
-              ),
-              Text(
-                TTexts.loginTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              Text(
-                TTexts.loginSubTitle,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-              const SizedBox(height: 50),
-
               ///
               Form(
+                key: controller.signUpFormKey,
                 child: Column(
                   children: [
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.mail_outlined),
-                        labelText: TTexts.email,
-                      ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(Icons.person),
+                              labelText: TTexts.firstName,
+                            ),
+                            validator: (value) => TValidator.validateEmptyTest('firstName', value),
+                            controller: controller.firstName,
+                          ),
+                        ),
+
+                        //
+                        const SizedBox(width: TSizes.defaultSpace),
+
+                        //
+                        Expanded(
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(Icons.person),
+                              labelText: TTexts.lastName,
+                            ),
+                            validator: (value) => TValidator.validateEmptyTest('lastName', value),
+                            controller: controller.lastName,
+                          ),
+                        ),
+                      ],
                     ),
 
                     ///
@@ -53,29 +71,57 @@ class LoginScreen extends StatelessWidget {
                     ///
                     TextFormField(
                       decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.person),
+                        labelText: TTexts.username,
+                      ),
+                      validator: (value) => TValidator.validateEmptyTest('username', value),
+                      controller: controller.userName,
+                    ),
+                    const SizedBox(height: TSizes.defaultSpace),
+
+                    //
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.email),
+                        labelText: TTexts.email,
+                      ),
+                      validator: (value) => TValidator.validateEmail(value),
+                      controller: controller.email,
+                    ),
+                    const SizedBox(height: TSizes.defaultSpace),
+
+                    //
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.phone),
+                        labelText: TTexts.phoneNo,
+                      ),
+                      validator: (value) => TValidator.validatePhoneNumber(value),
+                      controller: controller.phoneNumber,
+                    ),
+                    const SizedBox(height: TSizes.defaultSpace),
+
+                    //
+                    TextFormField(
+                      decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.password_rounded),
                         labelText: TTexts.password,
                         suffixIcon: Icon(Icons.remove_red_eye),
                       ),
+                      validator: (value) => TValidator.validatePassword(value),
+                      controller: controller.password,
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: TSizes.defaultSpace),
+              const SizedBox(height: TSizes.spaceBtwSections),
 
               ///
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Get.off(() => const NavigationMenu()),
-                  child: const Text(TTexts.signIn),
-                ),
-              ),
-              const SizedBox(height: TSizes.defaultSpace),
+
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () => Get.to(() => SignInScreen()),
+                  onPressed: () => Get.off(() => const LoginScreen()),
                   child: const Text(TTexts.createAccount),
                 ),
               ),
@@ -100,6 +146,7 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  //
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
@@ -115,6 +162,8 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: TSizes.defaultSpace),
+
+                  //
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),

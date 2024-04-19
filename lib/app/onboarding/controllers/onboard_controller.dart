@@ -1,6 +1,7 @@
 import 'package:cook_book/app/login/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class OnBoardController extends GetxController {
   static OnBoardController get instance => Get.find();
@@ -18,6 +19,8 @@ class OnBoardController extends GetxController {
   void nextPage() {
     int page = currentPageIndex.value;
     if (page == 2) {
+      final deviceStorage = GetStorage();
+      deviceStorage.write('isFirstTime', false);
       Get.offAll(() => const LoginScreen());
     } else {
       pageController.jumpToPage(page + 1);

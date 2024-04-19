@@ -1,4 +1,5 @@
 import 'package:cook_book/app/home/widgets/curved_background.dart';
+import 'package:cook_book/app/login/screens/login.dart';
 import 'package:cook_book/app/profile/screens/address.dart';
 import 'package:cook_book/common/widgets/custom_appbar.dart';
 import 'package:cook_book/common/widgets/section_heading.dart';
@@ -122,7 +123,10 @@ class SettingScreen extends StatelessWidget {
               padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(onPressed: () {}, child: const Text("Log Out")),
+                child: OutlinedButton(
+                  onPressed: () => Get.off(() => const LoginScreen()),
+                  child: const Text("Log Out"),
+                ),
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwSections)
