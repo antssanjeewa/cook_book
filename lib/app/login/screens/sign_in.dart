@@ -1,5 +1,5 @@
 import 'package:cook_book/app/login/controllers/sign_in_controller.dart';
-import 'package:cook_book/app/login/screens/login.dart';
+import 'package:cook_book/utils/constants/colors.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:cook_book/utils/constants/text_strings.dart';
@@ -15,21 +15,19 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          TTexts.signupTitle,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: TSizes.appBarHeight,
-            horizontal: TSizes.defaultSpace,
-          ),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(
+                TTexts.signupTitle,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              const SizedBox(height: TSizes.spaceBtwSections),
+
               ///
               Form(
                 key: controller.signUpFormKey,
@@ -102,14 +100,20 @@ class SignInScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.defaultSpace),
 
                     //
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.password_rounded),
-                        labelText: TTexts.password,
-                        suffixIcon: Icon(Icons.remove_red_eye),
+                    Obx(
+                      () => TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.password_rounded),
+                          labelText: TTexts.password,
+                          suffixIcon: IconButton(
+                            onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                            icon: Icon(controller.hidePassword.value ? Icons.visibility_off : Icons.visibility),
+                          ),
+                        ),
+                        obscureText: controller.hidePassword.value,
+                        validator: (value) => TValidator.validatePassword(value),
+                        controller: controller.password,
                       ),
-                      validator: (value) => TValidator.validatePassword(value),
-                      controller: controller.password,
                     ),
                   ],
                 ),
@@ -117,11 +121,56 @@ class SignInScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               ///
+              Row(
+                children: [
+                  SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: Obx(
+                      () => Checkbox(
+                        value: controller.privacyPolicy.value,
+                        onChanged: (value) => controller.privacyPolicy.value = !controller.privacyPolicy.value,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: TSizes.spaceBtwItems),
+                  Text.rich(TextSpan(
+                    children: [
+                      TextSpan(
+                        text: '${TTexts.iAgreeTo} ',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      TextSpan(
+                        text: TTexts.privacyPolicy,
+                        style: Theme.of(context).textTheme.bodyMedium!.apply(
+                              color: TColors.white,
+                              decoration: TextDecoration.underline,
+                            ),
+                      ),
+                      TextSpan(
+                        text: ' ${TTexts.and} ',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      TextSpan(
+                        text: TTexts.termsOfUse,
+                        style: Theme.of(context).textTheme.bodyMedium!.apply(
+                              color: TColors.white,
+                              decoration: TextDecoration.underline,
+                            ),
+                      ),
+                    ],
+                  ))
+                ],
+              ),
+
+              const SizedBox(height: TSizes.spaceBtwSections),
+
+              ///
 
               SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(
-                  onPressed: () => Get.off(() => const LoginScreen()),
+                child: ElevatedButton(
+                  onPressed: () => controller.signUp(),
                   child: const Text(TTexts.createAccount),
                 ),
               ),
