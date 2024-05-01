@@ -1,7 +1,7 @@
-import 'package:cook_book/app/home/screens/home.dart';
 import 'package:cook_book/app/login/controllers/authentication_repository.dart';
 import 'package:cook_book/app/login/controllers/user_repository.dart';
 import 'package:cook_book/app/login/models/user.dart';
+import 'package:cook_book/app/login/screens/verify_email.dart';
 import 'package:cook_book/utils/helpers/full_screen_loader.dart';
 import 'package:cook_book/utils/helpers/loaders.dart';
 import 'package:cook_book/utils/helpers/network_manager.dart';
@@ -57,7 +57,7 @@ class SignInController extends GetxController {
 
       TLoaders.successSnackBar(title: "Congratulation");
 
-      Get.to(() => const HomeScreen());
+      Get.to(() => const VerifyEmailScreen());
 
       ///
     } catch (e) {

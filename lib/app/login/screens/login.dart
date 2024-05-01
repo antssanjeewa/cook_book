@@ -1,8 +1,11 @@
+import 'package:cook_book/app/login/controllers/login_controller.dart';
 import 'package:cook_book/app/login/screens/sign_in.dart';
 import 'package:cook_book/app/navigation_menu.dart';
+import 'package:cook_book/utils/constants/colors.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:cook_book/utils/constants/text_strings.dart';
+import 'package:cook_book/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +14,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = LogInController();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -38,6 +43,7 @@ class LoginScreen extends StatelessWidget {
 
               ///
               Form(
+                key: controller.loginFormKey,
                 child: Column(
                   children: [
                     TextFormField(
@@ -45,17 +51,27 @@ class LoginScreen extends StatelessWidget {
                         prefixIcon: Icon(Icons.mail_outlined),
                         labelText: TTexts.email,
                       ),
+                      controller: controller.email,
+                      validator: (value) => TValidator.validateEmail(value),
                     ),
 
                     ///
                     const SizedBox(height: TSizes.defaultSpace),
 
                     ///
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.password_rounded),
-                        labelText: TTexts.password,
-                        suffixIcon: Icon(Icons.remove_red_eye),
+                    Obx(
+                      () => TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.password_rounded),
+                          labelText: TTexts.password,
+                          suffixIcon: IconButton(
+                            onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                            icon: Icon(controller.hidePassword.value ? Icons.visibility_off : Icons.visibility),
+                          ),
+                        ),
+                        controller: controller.password,
+                        obscureText: controller.hidePassword.value,
+                        validator: (value) => TValidator.validatePassword(value),
                       ),
                     ),
                   ],
@@ -63,11 +79,25 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: TSizes.defaultSpace),
 
+              //
+              Row(
+                children: [
+                  Obx(
+                    () => Checkbox(
+                      value: controller.rememberMe.value,
+                      onChanged: (value) => controller.rememberMe.value = !controller.rememberMe.value,
+                    ),
+                  ),
+                  const SizedBox(width: TSizes.spaceBtwItems),
+                  const Text(TTexts.rememberMe),
+                ],
+              ),
+
               ///
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.off(() => const NavigationMenu()),
+                  onPressed: () => controller.login(),
                   child: const Text(TTexts.signIn),
                 ),
               ),
