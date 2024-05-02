@@ -1,4 +1,6 @@
 import 'package:cook_book/utils/constants/colors.dart';
+import 'package:cook_book/utils/constants/image_strings.dart';
+import 'package:cook_book/utils/helpers/animations_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,9 +17,7 @@ class TFullScreenLoader {
           color: TColors.dark,
           height: double.infinity,
           width: double.infinity,
-          child: Column(
-            children: const [Text("Loading...")],
-          ),
+          child: const TAnimationLoader(animation: TImages.loader),
         ),
       ),
     );

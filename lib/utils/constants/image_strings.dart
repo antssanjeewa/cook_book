@@ -1,9 +1,7 @@
-
 /* -- App Image Strings -- */
 
 /// This class contains all the App Images in String formats.
 class TImages {
-
   // -- App Logos
   static const String darkAppLogo = "assets/logos/t-store-splash-logo-black.png";
   static const String lightAppLogo = "assets/logos/t-store-splash-logo-white.png";
@@ -42,6 +40,9 @@ class TImages {
   static const String deliveredInPlaneIllustration = "assets/images/animations/sammy-line-come-back-later.png";
   static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+
+  static const String paperPlane = "assets/images/animations/110052-paper-plane.json";
+  static const String loader = "assets/images/animations/loader-animation.json";
 
   // -- OnBoarding Texts
   static const String onBoardingImage1 = "assets/images/on_boarding_images/sammy-line-searching.gif";
@@ -125,10 +126,7 @@ class TImages {
   static const String productImage74 = "assets/images/products/slipper-product-1.png";
   static const String productImage75 = "assets/images/products/slipper-product-2.png";
   static const String productImage76 = "assets/images/products/slipper-product-3.png";
-  static const String productImage77= "assets/images/products/slipper-product.png";
-
-
-
+  static const String productImage77 = "assets/images/products/slipper-product.png";
 
   // -- Product Reviews
   static const String userProfileImage1 = "assets/images/reviews/review_profile_image_1.jpg";
@@ -148,7 +146,6 @@ class TImages {
   static const String banner7 = "assets/images/banners/banner_7.jpg";
   static const String banner8 = "assets/images/banners/banner_8.jpg";
 
-
   //Profile
   static const String user = "assets/images/content/user.png";
 
@@ -163,4 +160,3 @@ class TImages {
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
 }
-

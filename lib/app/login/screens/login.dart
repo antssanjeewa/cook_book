@@ -1,7 +1,5 @@
 import 'package:cook_book/app/login/controllers/login_controller.dart';
 import 'package:cook_book/app/login/screens/sign_in.dart';
-import 'package:cook_book/app/navigation_menu.dart';
-import 'package:cook_book/utils/constants/colors.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:cook_book/utils/constants/text_strings.dart';
@@ -10,12 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+
+  final controller = Get.put(LogInController());
 
   @override
   Widget build(BuildContext context) {
-    final controller = LogInController();
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(

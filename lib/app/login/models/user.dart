@@ -34,17 +34,19 @@ class User {
     };
   }
 
-  // factory User.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> doc) {
-  //   if (doc.data() != null) {
-  //     final data = doc.data()!;
-  //     return User(
-  //       id: doc.id,
-  //       firstName: data['firstName'] ?? '',
-  //       lastName: data['lastName'] ?? '',
-  //       userName: data['userName'] ?? '',
-  //       email: data['email'] ?? '',
-  //       phone: data['phone'] ?? '',
-  //     );
-  //   }
-  // }
+  factory User.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> doc) {
+    if (doc.data() != null) {
+      final data = doc.data()!;
+      return User(
+        id: doc.id,
+        firstName: data['firstName'] ?? '',
+        lastName: data['lastName'] ?? '',
+        userName: data['userName'] ?? '',
+        email: data['email'] ?? '',
+        phone: data['phone'] ?? '',
+      );
+    } else {
+      return User.empty();
+    }
+  }
 }

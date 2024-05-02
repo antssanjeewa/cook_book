@@ -21,7 +21,7 @@ class OnBoardController extends GetxController {
     if (page == 2) {
       final deviceStorage = GetStorage();
       deviceStorage.write('isFirstTime', false);
-      Get.offAll(() => const LoginScreen());
+      Get.offAll(() => LoginScreen());
     } else {
       pageController.jumpToPage(page + 1);
     }

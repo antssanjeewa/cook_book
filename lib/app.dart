@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       initialBinding: GeneralBinding(),
-      home: const SafeArea(child: LoginScreen()),
+      home: SafeArea(child: LoginScreen()),
     );
   }
 }

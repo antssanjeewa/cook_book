@@ -1,5 +1,4 @@
 import 'package:cook_book/app/login/controllers/authentication_repository.dart';
-import 'package:cook_book/app/login/screens/verify_email.dart';
 import 'package:cook_book/utils/helpers/full_screen_loader.dart';
 import 'package:cook_book/utils/helpers/loaders.dart';
 import 'package:cook_book/utils/helpers/network_manager.dart';
@@ -32,11 +31,13 @@ class LogInController extends GetxController {
       //
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
+        TFullScreenLoader.stopLoading();
         return;
       }
 
       //
       if (!loginFormKey.currentState!.validate()) {
+        TFullScreenLoader.stopLoading();
         return;
       }
 
@@ -45,18 +46,18 @@ class LogInController extends GetxController {
         localStorage.write("REM_PASSWORD", password.text.trim());
       }
 
-      final userCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+      await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       TLoaders.successSnackBar(title: "Congratulation");
-
-      Get.to(() => const VerifyEmailScreen());
+      // TFullScreenLoader.stopLoading();
+      AuthenticationRepository.instance.screenRedirect();
 
       ///
     } catch (e) {
       //
       TLoaders.warningSnackBar(title: "Oh Snap!", message: e.toString());
     } finally {
-      TFullScreenLoader.stopLoading();
+      // TFullScreenLoader.stopLoading();
     }
   }
 }

@@ -1,4 +1,5 @@
 import 'package:cook_book/app/home/widgets/curved_background.dart';
+import 'package:cook_book/app/login/controllers/authentication_repository.dart';
 import 'package:cook_book/app/login/screens/login.dart';
 import 'package:cook_book/app/profile/screens/address.dart';
 import 'package:cook_book/common/widgets/custom_appbar.dart';
@@ -124,7 +125,7 @@ class SettingScreen extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () => Get.off(() => const LoginScreen()),
+                  onPressed: () => AuthenticationRepository.instance.logout(),
                   child: const Text("Log Out"),
                 ),
               ),

@@ -18,6 +18,8 @@ class AuthenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
+  User? get authUser => _auth.currentUser;
+
   @override
   void onReady() {
     FlutterNativeSplash.remove();
@@ -35,7 +37,7 @@ class AuthenticationRepository extends GetxController {
     } else {
       deviceStorage.writeIfNull('isFirstTime', true);
 
-      deviceStorage.read('isFirstTime') != true ? Get.offAll(() => const LoginScreen()) : Get.offAll(() => const OnBoardScreen());
+      deviceStorage.read('isFirstTime') != true ? Get.offAll(() => LoginScreen()) : Get.offAll(() => const OnBoardScreen());
     }
   }
 
@@ -90,7 +92,7 @@ class AuthenticationRepository extends GetxController {
   Future<void> logout() async {
     try {
       await FirebaseAuth.instance.signOut();
-      Get.offAll(() => const LoginScreen());
+      Get.offAll(() => LoginScreen());
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

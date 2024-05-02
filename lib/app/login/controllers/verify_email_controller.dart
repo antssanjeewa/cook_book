@@ -32,7 +32,7 @@ class VerifyEmailController extends GetxController {
       if (user?.emailVerified ?? false) {
         timer.cancel();
         // redirect
-        Get.off(const HomeScreen());
+        Get.off(HomeScreen());
       }
     });
   }
