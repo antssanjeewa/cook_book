@@ -39,11 +39,11 @@ class User {
       final data = doc.data()!;
       return User(
         id: doc.id,
-        firstName: data['firstName'] ?? '',
-        lastName: data['lastName'] ?? '',
-        userName: data['userName'] ?? '',
-        email: data['email'] ?? '',
-        phone: data['phone'] ?? '',
+        firstName: data['FirstName'] ?? '',
+        lastName: data['LastName'] ?? '',
+        userName: data['UserName'] ?? '',
+        email: data['Email'] ?? '',
+        phone: data['Phone'] ?? '',
       );
     } else {
       return User.empty();

@@ -1,11 +1,15 @@
+import 'package:cook_book/app/store/controller/category_controller.dart';
 import 'package:cook_book/utils/constants/image_strings.dart';
 import 'package:cook_book/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CategoryList extends StatelessWidget {
   CategoryList({
     Key? key,
   }) : super(key: key);
+
+  final controller = Get.put(CategoryController());
 
   final List<String> categoryList = [
     TImages.sportIcon,
